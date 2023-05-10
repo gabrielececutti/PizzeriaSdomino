@@ -19,7 +19,6 @@ namespace SdominoData.FileWorking
 
         public Order Read()
         {
-            var pizzas = new List<IPizza>();
             var order = new Order();
             using var reader = new StreamReader(_basePath);
             string line;
@@ -28,13 +27,10 @@ namespace SdominoData.FileWorking
             while ((line = reader.ReadLine()) != null)
             {
                 fields = line.Split(';');
-                
+                var pizza = PizzaConverter.Convert(fields);
+                order.Pizzas.Add(pizza);
             }
-        }
-
-        private IPizza converter (string[] strings)
-        {
-
+            return order;
         }
     }
 }
