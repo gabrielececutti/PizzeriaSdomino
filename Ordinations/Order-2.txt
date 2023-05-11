@@ -1,2 +1,2 @@
 BasePizza;Impasto;Aggiunte
-Margherita;Normale;ProsciuttoCotto;Ananas
+Margherita;Normale;ProsciuttoCotto,Ananas

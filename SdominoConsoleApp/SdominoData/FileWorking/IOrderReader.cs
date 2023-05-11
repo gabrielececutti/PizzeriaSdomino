@@ -1,4 +1,5 @@
 ﻿using SominoModels.Models;
+using SominoModels.Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace SdominoData.FileWorking
 {
     public interface IOrderReader
     {
-        public Order Read();
+        public List<OrderDTO> Read();
     }
 }

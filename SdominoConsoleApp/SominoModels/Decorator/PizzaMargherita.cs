@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SominoModels.Decorator
+﻿namespace SominoModels.Decorator
 {
     public class PizzaMargherita : IPizza
     {
+        private const double Price = 7;
         public string GetDescription()
         {
             return "pizza margherita";
@@ -15,7 +10,7 @@ namespace SominoModels.Decorator
 
         public double GetPrice()
         {
-            return 7;
+            return Price;
         }
     }
 }

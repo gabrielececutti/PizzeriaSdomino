@@ -1,4 +1,5 @@
 ﻿using SominoModels.Models;
+using SominoModels.Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace SdominoData.FileWorking
 {
     public class CsvReceiptConverter
     {
-        public static string Convert(Receipt receipt)
+        public static string Convert(ReceiptDTO receipt)
         {
-            return $"{receipt.Id};{receipt.Description};{receipt.TotalPrice}";
+            return $"{receipt.Number};{receipt.Description};{receipt.Price};{receipt.Date}";
         }
     }
 }

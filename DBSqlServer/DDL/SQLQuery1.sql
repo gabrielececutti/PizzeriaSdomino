@@ -3,15 +3,19 @@ GO
 USE Sdomino
 GO
 
-CREATE TABLE Orders (
+CREATE TABLE [Order] (
 Id INT IDENTITY (1,1) NOT NULL PRIMARY KEY,
-Description nvarchar(500) NOT NULL
+Description nvarchar(500) NOT NULL,
+TotalPrice INT NOT NULL
 )
 
-CREATE TABLE Receipts (
+CREATE TABLE Receipt (
 Id INT IDENTITY (1,1) NOT NULL PRIMARY KEY,
-OrderId INT NOT NULL FOREIGN KEY REFERENCES Orders(Id),
-TotalPrice FLOAT NOT NULL,
-Description NVARCHAR (500) NOT NULL
+OrderId INT NOT NULL FOREIGN KEY REFERENCES [Order](Id),
+Date DateTime NOT NULL
 )
+delete from [Order]
+delete from Receipt
 
+select * from [Order]
+select * from Receipt

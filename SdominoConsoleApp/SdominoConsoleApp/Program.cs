@@ -1,11 +1,21 @@
-﻿
-using SominoModels.Decorator;
-using System.Net.Http.Headers;
+﻿using Microsoft.Extensions.DependencyInjection;
+using SdominoConsoleApp;
+using SdominoConsoleApp.IOC;
+using SdominoData.FileWorking;
+using SdominoData.PersistenceServices.ISdominoPersistenceServiceDb;
+using SdominoData.PersistenceServices.ISdominoPersistenceServiceFile;
 
-var pizzaBase = new PizzaMargherita();
-var conProsciuttocotto = new WithProsciuttoCotto(pizzaBase);
-var conFunghi = new WithFunghi(conProsciuttocotto);
-var conAnanas = new WithAnanas(conFunghi);
+var host = StartUp.CreateHostBuilder().Build();
+var orderReader = host.Services.GetRequiredService<IOrderReader>();
+var persistenceServiceDb = host.Services.GetRequiredService<IPersistenceServiceDb>();
+var persistenceServiceFile = host.Services.GetRequiredService<IPersistenceServiceFile>();
 
-Console.WriteLine(conAnanas.GetDescription());
-Console.WriteLine(conAnanas.GetPrice());
+var app = new AppTest (orderReader, persistenceServiceDb, persistenceServiceFile);
+app.Run ();
+
+
+
+
+
+
+

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SominoModels.NewDecorator
+namespace SdominoServices.OrdersServices
 {
-    public class PizzaNapoletana : Pizza
+    public interface IOrderService
     {
+        public void Save();
     }
 }

@@ -1,4 +1,5 @@
 BasePizza;Impasto;Aggiunte
-Margerita;Integrale;ProsciuttoCotto,Fughi,ProsciuttoCrudo
-Bianca,Normale;ProsciuttoCrudo
+Margherita;Integrale;ProsciuttoCotto,Funghi,ProsciuttoCrudo
+Bianca;Normale;ProsciuttoCrudo
 Napoletana;Normale;Funghi
+Margherita;Normale;ProsciuttoCrudo,Ananas
